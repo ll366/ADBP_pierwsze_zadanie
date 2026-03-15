@@ -1,9 +1,9 @@
 namespace APBD_zadanie_15_03_2026;
 
-public class Person
+public class Person : IComparable<Person>
 {
-    private string name {get; set;}
-    private string surname{get; set;}
+    private string name {get;}
+    private string surname{get;}
     private int identifier{get;}
     
     private static int biggestIdentifier;
@@ -25,5 +25,9 @@ public class Person
         }
     }
 
-    
+
+    public int CompareTo(Person? other)
+    {
+        return this.identifier - other.identifier;
+    }
 }
